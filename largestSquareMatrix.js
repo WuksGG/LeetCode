@@ -1,5 +1,12 @@
 // STATUS: COMPLETE
 
+// Description:
+//
+// Given a binary m x n matrix, return the size of the
+// largest square in the matrix.
+//
+// Test cases at the bottom of the file.
+
 const checkAt = (arr, row, col, size) => {
   if (row + size - 1 >= arr.length || col + size - 1 >= arr[0].length) {
     // Out of bounds error 1
@@ -32,18 +39,20 @@ const largestSize = (arr) => {
       }
     }
   }
-  return currentMax;
+  // Returns the size of the matrix
+  // instead of the dimensions.
+  return currentMax * currentMax;
 };
 
-const testArr = [
-  [Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2)],
-  [Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2)],
-  [Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2)],
-  [Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2)]
-];
+module.exports = largestSize;
 
-testArr.forEach(row => {
-  console.log(row);
-});
-
-console.log(largestSize(testArr2));
+// const testArr = [
+//   [Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2)],
+//   [Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2)],
+//   [Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2)],
+//   [Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2), Math.floor(Math.random() * 2)]
+// ];
+// testArr.forEach(row => {
+//   console.log(row);
+// });
+// console.log(largestSize(testArr));
